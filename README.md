@@ -1,6 +1,8 @@
-# Cwf Job Portal with Firebase
+# Job Portal with Firebase: Code with Faizan (CWF) 
 
-This project is flutter mobile application, following functionality is implemented in this app:
+This project is flutter mobile application, following functionality has implemented in this app:
+- Repository pattern
+- Auth with email -> Login, Signup, Forgot Password
 - Post/create new job
 - Update job
 - Show job
@@ -12,7 +14,7 @@ In this project, following packages are used to develop mobile app:
 
 - [flutter_riverpod](https://pub.dev/packages/faker): for State Management
 - [go_router](https://pub.dev/packages/go_router): for navigation
-- [faker](https://pub.dev/packages/faker): for fake dummy jobs data
+- [faker](https://pub.dev/packages/faker): for dummy fake data
 - [firebase_core](https://pub.dev/packages/firebase_core): for Firebase
 - [firebase_auth](https://pub.dev/packages/firebase_auth): for Authentication
 - [cloud_firestore](https://pub.dev/packages/cloud_firestore): for cloud firestore

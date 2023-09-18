@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../providers/password_visible.dart';
+import '../providers/password_visible_provider.dart';
 
 class PasswordTextFormField extends ConsumerWidget {
   const PasswordTextFormField({super.key, required this.passwordController});
