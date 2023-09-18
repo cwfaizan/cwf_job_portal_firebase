@@ -10,13 +10,13 @@ This project is flutter mobile application, following functionality is implement
 
 In this project, following packages are used to develop mobile app:
 
-- [flutter_riverpod: for State Management](https://pub.dev/packages/faker)
-- [go_router: for navigation](https://pub.dev/packages/go_router)
-- [faker: for fake dummy jobs data](https://pub.dev/packages/faker)
-- [firebase_core: for Firebase](https://pub.dev/packages/firebase_core)
-- [firebase_auth: for Authentication](https://pub.dev/packages/firebase_auth)
-- [cloud_firestore: for cloud firestore](https://pub.dev/packages/cloud_firestore)
-- [change_app_package_name: for change app package name](https://pub.dev/packages/change_app_package_name)
+- [flutter_riverpod](https://pub.dev/packages/faker): for State Management
+- [go_router](https://pub.dev/packages/go_router): for navigation
+- [faker](https://pub.dev/packages/faker): for fake dummy jobs data
+- [firebase_core](https://pub.dev/packages/firebase_core): for Firebase
+- [firebase_auth](https://pub.dev/packages/firebase_auth): for Authentication
+- [cloud_firestore](https://pub.dev/packages/cloud_firestore): for cloud firestore
+- [change_app_package_name](https://pub.dev/packages/change_app_package_name): for change app package name
 
 A few resources to get you started if this is your first Flutter project:
 
