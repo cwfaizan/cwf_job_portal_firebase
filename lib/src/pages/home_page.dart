@@ -42,10 +42,12 @@ class HomePage extends ConsumerWidget {
           itemCount: data.length,
           itemBuilder: (context, index) => Dismissible(
             key: Key(data[index].id),
+            direction: DismissDirection.endToStart,
             onDismissed: (direction) {
+              final user = ref.watch(firebaseAuthProvider).currentUser;
               ref
                   .read(jobRepositoryProvider.notifier)
-                  .deleteJob(data[index].id);
+                  .deleteJob(user!.uid, data[index].id);
             },
             child: InkWell(
               onTap: () {

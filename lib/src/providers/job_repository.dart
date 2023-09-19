@@ -43,7 +43,7 @@ class JobRepository extends _$JobRepository {
     });
   }
 
-  Future<void> deleteJob(String jobId) async {
+  Future<void> deleteJob(String uid, String jobId) async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
       await ref
