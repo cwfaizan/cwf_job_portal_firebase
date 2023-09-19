@@ -15,7 +15,7 @@ class HomePage extends ConsumerWidget {
     final jrProvider = ref.watch(jobRepositoryProvider);
     return Scaffold(
       appBar: customAppBar(
-        'Home',
+        'CWF Job Portal',
         actions: [
           IconButton(
             onPressed: () async {
@@ -40,10 +40,30 @@ class HomePage extends ConsumerWidget {
       body: jrProvider.when(
         data: (data) => ListView.builder(
           itemCount: data.length,
-          itemBuilder: (context, index) => ListTile(
-            leading: CircleAvatar(child: Text('${index + 1}')),
-            title: Text(data[index]['title']),
-            subtitle: Text(data[index]['company']),
+          itemBuilder: (context, index) => Dismissible(
+            key: Key(data[index].id),
+            onDismissed: (direction) {
+              ref
+                  .read(jobRepositoryProvider.notifier)
+                  .deleteJob(data[index].id);
+            },
+            child: InkWell(
+              onTap: () {
+                final user = ref.watch(firebaseAuthProvider).currentUser;
+                final faker = ref.watch(fakerProvider);
+                ref.read(jobRepositoryProvider.notifier).updateJob(
+                      data[index].id,
+                      user!.uid,
+                      faker.job.title(),
+                      faker.company.name(),
+                    );
+              },
+              child: ListTile(
+                leading: CircleAvatar(child: Text('${index + 1}')),
+                title: Text(data[index].title),
+                subtitle: Text(data[index].company),
+              ),
+            ),
           ),
         ),
         error: (error, stackTrace) => Center(child: Text('$error')),

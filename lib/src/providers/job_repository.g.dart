@@ -6,12 +6,12 @@ part of 'job_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$jobRepositoryHash() => r'278dc8e1cf5151d9b1f411b7be24f482b02ba054';
+String _$jobRepositoryHash() => r'55df4aa168b69c7478eeaa41a07ab332098c732d';
 
 /// See also [JobRepository].
 @ProviderFor(JobRepository)
-final jobRepositoryProvider = AutoDisposeAsyncNotifierProvider<JobRepository,
-    List<Map<String, dynamic>>>.internal(
+final jobRepositoryProvider =
+    AutoDisposeAsyncNotifierProvider<JobRepository, List<Job>>.internal(
   JobRepository.new,
   name: r'jobRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -21,6 +21,6 @@ final jobRepositoryProvider = AutoDisposeAsyncNotifierProvider<JobRepository,
   allTransitiveDependencies: null,
 );
 
-typedef _$JobRepository = AutoDisposeAsyncNotifier<List<Map<String, dynamic>>>;
+typedef _$JobRepository = AutoDisposeAsyncNotifier<List<Job>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
