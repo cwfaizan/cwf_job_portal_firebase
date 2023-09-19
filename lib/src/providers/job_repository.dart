@@ -15,8 +15,10 @@ class JobRepository extends _$JobRepository {
   Future<void> addJob(String uid, String title, String company) async {
     state = const AsyncValue.loading();
     state = await AsyncValue.guard(() async {
-      final docRef =
-          await ref.watch(firebaseFirestoreProvider).collection('jobs').add({
+      final docRef = await ref
+          .watch(firebaseFirestoreProvider)
+          .collection('users/$uid/jobs')
+          .add({
         'uid': uid,
         'title': title,
         'company': company,
@@ -32,7 +34,7 @@ class JobRepository extends _$JobRepository {
     state = await AsyncValue.guard(() async {
       await ref
           .watch(firebaseFirestoreProvider)
-          .collection('jobs')
+          .collection('users/$uid/jobs')
           .doc(jobId)
           .update({
         'uid': uid,
@@ -48,7 +50,7 @@ class JobRepository extends _$JobRepository {
     state = await AsyncValue.guard(() async {
       await ref
           .watch(firebaseFirestoreProvider)
-          .collection('jobs')
+          .collection('users/$uid/jobs')
           .doc(jobId)
           .delete();
       return getJobs();
@@ -56,8 +58,12 @@ class JobRepository extends _$JobRepository {
   }
 
   Future<List<Job>> getJobs() async {
-    QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await ref.watch(firebaseFirestoreProvider).collection('jobs').get();
+    final user = ref.watch(firebaseAuthProvider).currentUser;
+    QuerySnapshot<Map<String, dynamic>> querySnapshot = await ref
+        .watch(firebaseFirestoreProvider)
+        .collection('users/${user!.uid}/jobs')
+        // .where('uid', isEqualTo: user.uid)
+        .get();
     return querySnapshot.docs.map((e) => Job.fromJson(e.id, e.data())).toList();
   }
 }
