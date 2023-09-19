@@ -2,7 +2,7 @@
 
 This project is flutter mobile application, following functionality has implemented in this app:
 - Repository pattern
-- Auth with email -> Login, Signup, Forgot Password
+- Firebase Authentication
 - Post/create new job
 - Update job
 - Show job
