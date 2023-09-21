@@ -22,6 +22,7 @@ class JobRepository extends _$JobRepository {
         'uid': uid,
         'title': title,
         'company': company,
+        'createdAt': FieldValue.serverTimestamp(),
       });
       log(docRef.id);
       return getJobs();
@@ -62,6 +63,7 @@ class JobRepository extends _$JobRepository {
     QuerySnapshot<Map<String, dynamic>> querySnapshot = await ref
         .watch(firebaseFirestoreProvider)
         .collection('users/${user!.uid}/jobs')
+        .orderBy('createdAt', descending: true)
         // .where('uid', isEqualTo: user.uid)
         .get();
     return querySnapshot.docs.map((e) => Job.fromJson(e.id, e.data())).toList();

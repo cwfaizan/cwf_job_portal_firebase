@@ -63,7 +63,17 @@ class HomePage extends ConsumerWidget {
               child: ListTile(
                 leading: CircleAvatar(child: Text('${index + 1}')),
                 title: Text(data[index].title),
-                subtitle: Text(data[index].company),
+                subtitle: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Text(data[index].company),
+                    ),
+                    Flexible(
+                      child: Text(data[index].createdAt.toString()),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
