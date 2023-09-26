@@ -1,4 +1,4 @@
-# Job Portal with Firebase, riverpod & go_router: Code with Faizan (CWF) 
+# Job Portal with Firebase, riverpod & go_router
 
 This project is flutter mobile application, following functionality has implemented in this app:
 - Repository pattern
