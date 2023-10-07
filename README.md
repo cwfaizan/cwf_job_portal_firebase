@@ -1,7 +1,7 @@
-# Job Portal (Flutter Mobile App with Firebase & riverpod)
+# Job Portal App (Flutter Mobile App with Firebase & riverpod)
 This project is Android and iOS Mobile App, developed in Dart Flutter framwork.
 
-# Job Portal Functionality
+# Functionality of Job Portal App
 Following functionality has implemented in this app:
 - Repository pattern
 - Firebase Authentication
@@ -10,7 +10,7 @@ Following functionality has implemented in this app:
 - Show job
 - Delete job
 
-## Job Portal Flutter Packages details
+## Flutter Packages details of Job Portal App
 
 In this project, following packages are used to develop mobile app:
 
