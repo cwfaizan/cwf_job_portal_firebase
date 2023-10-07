@@ -1,7 +1,8 @@
-# Flutter Mobile App (Job Portal) with Firebase
-# Job Portal with Firebase, riverpod & go_router
+# Flutter Mobile App (Job Portal)
+This project is Android and iOS Mobile App, developed in Dart Flutter framwork.
 
-This project is flutter mobile application, following functionality has implemented in this app:
+# Job Portal with Firebase, riverpod & go_router
+Following functionality has implemented in this app:
 - Repository pattern
 - Firebase Authentication
 - Post/create new job
