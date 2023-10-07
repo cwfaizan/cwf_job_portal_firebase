@@ -1,3 +1,4 @@
+# Flutter Mobile App (Job Portal) with Firebase
 # Job Portal with Firebase, riverpod & go_router
 
 This project is flutter mobile application, following functionality has implemented in this app:
